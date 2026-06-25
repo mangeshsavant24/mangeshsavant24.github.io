@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="AI/ML Engineer & Systems Builder at VIT Pune. Building computer vision systems, time-series forecasting pipelines, and distributed software."/>
+  <meta property="og:title" content="Mangesh Savant"/>
+  <meta property="og:description" content="AI/ML Engineer & Systems Builder at VIT Pune."/>
+  <meta name="theme-color" content="#111111"/>
+  <title>Mangesh Savant | AI/ML Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #111111;
+      --bg-card:   #181818;
+      --bg-hover:  #1f1f1f;
+      --border:    #2a2a2a;
+      --accent:    #4ade80;     /* electric green — ML/systems energy */
+      --accent2:   #22d3ee;     /* cyan for secondary accents */
+      --text-hi:   #f0f0f0;
+      --text-mid:  #a0a0a0;
+      --text-lo:   #555555;
+      --mono:      'JetBrains Mono', monospace;
+      --sans:      'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-mid);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+    /* ── NAV ───────────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(17,17,17,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 820px; margin: 0 auto;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 52px;
+    }
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 13px; font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      font-size: 13px; color: var(--text-mid);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text-hi); }
+
+    /* ── LAYOUT ────────────────────────────────────────────── */
+    .content { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── HERO ──────────────────────────────────────────────── */
+    .hero {
+      padding: 80px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px; color: var(--accent);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-name {
+      font-size: clamp(40px, 7vw, 64px);
+      font-weight: 600;
+      color: var(--text-hi);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .hero-tagline {
+      font-size: 18px;
+      color: var(--text-mid);
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+    .hero-tagline strong { color: var(--text-hi); font-weight: 500; }
+    .hero-links {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-bottom: 56px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 13px; font-weight: 500;
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent); color: #0a0a0a;
+    }
+    .btn-primary:hover { background: #6ef99a; }
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text-mid);
+      background: transparent;
+    }
+    .btn-ghost:hover { border-color: var(--text-lo); color: var(--text-hi); background: var(--bg-hover); }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 480px;
+    }
+    .stat {
+      background: var(--bg-card);
+      padding: 20px 24px;
+    }
+    .stat-val {
+      font-family: var(--mono);
+      font-size: 22px; font-weight: 500;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 11px; color: var(--text-lo);
+      line-height: 1.3;
+    }
+
+    /* ── SECTION ───────────────────────────────────────────── */
+    section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 11px; color: var(--text-lo);
+      letter-spacing: 0.15em; text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 22px; font-weight: 600;
+      color: var(--text-hi);
+      margin-bottom: 32px;
+    }
+
+    /* ── STRENGTHS ─────────────────────────────────────────── */
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .strength-card {
+      background: var(--bg-card);
+      padding: 24px;
+      transition: background 0.15s;
+    }
+    .strength-card:hover { background: var(--bg-hover); }
+    .strength-icon {
+      font-size: 20px; margin-bottom: 12px;
+    }
+    .strength-name {
+      font-size: 14px; font-weight: 600;
+      color: var(--text-hi);
+      margin-bottom: 6px;
+    }
+    .strength-desc {
+      font-size: 13px; color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── PROJECTS ──────────────────────────────────────────── */
+    .projects-list { display: flex; flex-direction: column; gap: 2px; }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 28px 24px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .project-card:hover { border-color: #3a3a3a; background: var(--bg-hover); }
+    .project-header {
+      display: flex; align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .project-name {
+      font-size: 16px; font-weight: 600;
+      color: var(--text-hi);
+    }
+    .project-year {
+      font-family: var(--mono);
+      font-size: 12px; color: var(--text-lo);
+      white-space: nowrap; margin-top: 3px;
+    }
+    .project-desc { font-size: 14px; line-height: 1.65; margin-bottom: 16px; }
+    .project-bullets {
+      list-style: none;
+      margin-bottom: 18px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .project-bullets li {
+      font-size: 13px; color: var(--text-mid);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .project-bullets li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--accent);
+      font-size: 12px;
+    }
+    .metric-highlight {
+      color: var(--accent);
+      font-weight: 500;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+    .tech-tags {
+      display: flex; flex-wrap: wrap; gap: 6px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-family: var(--mono);
+      font-size: 11px;
+      background: #1a2a1a;
+      color: var(--accent);
+      border: 1px solid #2a3a2a;
+    }
+    .tag-cyan {
+      background: #0d2a2e;
+      color: var(--accent2);
+      border-color: #1a3a3e;
+    }
+
+    /* ── SKILLS ────────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .skill-row {
+      background: var(--bg-card);
+      padding: 16px 20px;
+    }
+    .skill-domain {
+      font-size: 12px; font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+    .skill-list {
+      font-size: 13px; color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    /* ── EDUCATION ─────────────────────────────────────────── */
+    .edu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+    }
+    .edu-school { font-size: 16px; font-weight: 600; color: var(--text-hi); margin-bottom: 4px; }
+    .edu-degree { font-size: 14px; color: var(--text-mid); margin-bottom: 12px; }
+    .edu-detail {
+      display: flex; flex-wrap: wrap; gap: 16px;
+    }
+    .edu-chip {
+      font-family: var(--mono); font-size: 12px;
+      padding: 3px 10px; border-radius: 4px;
+      background: #1a2a1a; color: var(--accent);
+      border: 1px solid #2a3a2a;
+    }
+    .edu-coursework {
+      margin-top: 12px;
+      font-size: 13px; color: var(--text-mid);
+    }
+    .edu-coursework strong { color: var(--text-hi); font-weight: 500; }
+
+    .edu-secondary {
+      display: flex; flex-direction: column; gap: 2px;
+      margin-top: 2px;
+    }
+    .edu-sec-row {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 20px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .edu-sec-name { font-size: 13px; color: var(--text-hi); }
+    .edu-sec-score {
+      font-family: var(--mono); font-size: 13px;
+      color: var(--accent); font-weight: 500;
+    }
+
+    /* ── ACHIEVEMENTS ──────────────────────────────────────── */
+    .achieve-list {
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .achieve-row {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 20px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .achieve-icon { font-size: 18px; line-height: 1; margin-top: 1px; }
+    .achieve-body { }
+    .achieve-title { font-size: 13px; font-weight: 500; color: var(--text-hi); }
+    .achieve-sub { font-size: 12px; color: var(--text-mid); margin-top: 2px; }
+
+    /* ── CONTACT ───────────────────────────────────────────── */
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+    }
+    .contact-cell {
+      background: var(--bg-card);
+      padding: 20px 24px;
+      transition: background 0.15s;
+    }
+    .contact-cell:hover { background: var(--bg-hover); }
+    .contact-cell a { color: var(--text-hi); font-size: 14px; }
+    .contact-cell a:hover { color: var(--accent); }
+    .contact-label {
+      font-family: var(--mono); font-size: 11px;
+      color: var(--text-lo); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 5px;
+    }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
+    footer {
+      padding: 32px 0;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 12px; color: var(--text-lo);
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .hero { padding: 52px 0 48px; }
+      .strengths-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .nav-links { gap: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">mangesh.dev</span>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="content">
+  <div class="hero">
+    <div class="hero-eyebrow">AI/ML Engineer · Systems Builder · VIT Pune</div>
+    <h1 class="hero-name">Mangesh<br>Savant</h1>
+    <p class="hero-tagline">
+      I build <strong>production-grade ML systems</strong> for real-world problems —
+      from national-scale environmental forecasting to real-time AR fashion experiences
+      and distributed systems in Go.
+    </p>
+    <div class="hero-links">
+      <a class="btn btn-primary" href="mailto:mangesh.pvt24@gmail.com">Contact me</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/mangesh-savant" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-val">9.55</div>
+        <div class="stat-label">GPA at VIT Pune</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">5K+</div>
+        <div class="stat-label">DWLR stations monitored</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">40%</div>
+        <div class="stat-label">latency cut on AR inference</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STRENGTHS ── -->
+  <section>
+    <div class="section-label">What I'm strong at</div>
+    <h2 class="section-title">Core capabilities</h2>
+    <div class="strengths-grid">
+      <div class="strength-card">
+        <div class="strength-icon">🧠</div>
+        <div class="strength-name">Machine Learning & Deep Learning</div>
+        <div class="strength-desc">LSTM forecasting, diffusion models, Scikit-learn pipelines, HuggingFace, TensorFlow — from data ingestion to production inference.</div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">👁️</div>
+        <div class="strength-name">Computer Vision & Generative AI</div>
+        <div class="strength-desc">3D pose estimation, ControlNet conditioning, NeRF-style view synthesis, ONNX quantization, OpenCV — real-time at mobile scale.</div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">⚙️</div>
+        <div class="strength-name">Systems Engineering</div>
+        <div class="strength-desc">Raft consensus protocols, compiler frontends with Pratt parsers, garbage collection algorithms — Go and Python at the core.</div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">🌐</div>
+        <div class="strength-name">Full-Stack & Cloud</div>
+        <div class="strength-desc">Flutter mobile apps, Firebase, REST APIs, Google Maps API, Streamlit dashboards — complete product delivery from sensor to screen.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <div class="section-label">Selected work</div>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-list">
+
+      <!-- 360 Try-On -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">360° Fashion Try-On · AR/VR & Generative AI</div>
+          <div class="project-year">2025</div>
+        </div>
+        <p class="project-desc">
+          A virtual try-on system that renders photorealistic garment overlays on user avatars from any angle, deployable in mobile AR shopping environments.
+        </p>
+        <ul class="project-bullets">
+          <li>Built 3D body pose estimation + generative diffusion pipeline handling occlusion, lighting variation, and fabric deformation</li>
+          <li>Engineered ControlNet-based pose conditioning with NeRF-style view synthesis for 360° coverage</li>
+          <li>Reduced garment overlay inference latency by <span class="metric-highlight">40%</span> via ONNX quantization and GPU-accelerated inference</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Diffusion Models</span>
+          <span class="tag">ControlNet</span><span class="tag">OpenCV</span><span class="tag">ONNX</span>
+          <span class="tag">AR/VR</span><span class="tag">3D Pose Estimation</span>
+        </div>
+      </div>
+
+      <!-- BHUJAL-NETRA -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">BHUJAL-NETRA · Real-Time Groundwater Evaluation Platform</div>
+          <div class="project-year">2025</div>
+        </div>
+        <p class="project-desc">
+          Full-stack groundwater monitoring and forecasting platform covering <span class="metric-highlight">5,260+</span> DWLR stations across India. Reached Local Finals at Smart India Hackathon 2025.
+        </p>
+        <ul class="project-bullets">
+          <li>Multi-model forecasting pipeline: LSTM for short-term water level prediction + Pastas + WTF model for recharge estimation; LSTM achieved <span class="metric-highlight">RMSE 0.18m</span> over 30-day horizon</li>
+          <li>Flutter mobile app with multilingual AI chatbot, policymaker dashboard, research portal, and GIS-based groundwater classification map</li>
+          <li>National-scale data architecture integrating real-time sensor ingestion, ML forecasting, and Firebase/Google Maps API</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span><span class="tag">LSTM</span><span class="tag">Pastas</span>
+          <span class="tag">Flutter</span><span class="tag">Firebase</span>
+          <span class="tag">Google Maps API</span><span class="tag">Matplotlib</span>
+        </div>
+      </div>
+
+      <!-- Raft KV Store -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">Distributed Key-Value Store · Raft Consensus</div>
+          <div class="project-year">2025</div>
+        </div>
+        <p class="project-desc">
+          Fault-tolerant distributed KV store in Go using the Raft consensus protocol — one of the most technically ambitious undergraduate systems projects.
+        </p>
+        <ul class="project-bullets">
+          <li>Implemented leader election, log replication, and cluster membership changes across a 5-node cluster</li>
+          <li>Linearizable read/write API over gRPC with strong consistency under simulated partitions and node failures</li>
+          <li>Compaction and snapshotting mechanism reducing memory footprint by <span class="metric-highlight">60%</span> in long-running clusters</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag tag-cyan">Go</span><span class="tag tag-cyan">Raft Consensus</span>
+          <span class="tag tag-cyan">gRPC</span><span class="tag tag-cyan">Distributed Systems</span>
+          <span class="tag tag-cyan">Concurrency</span>
+        </div>
+      </div>
+
+      <!-- AST Generator -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">AST Generator · Compiler Frontend</div>
+          <div class="project-year">Jan 2026</div>
+        </div>
+        <p class="project-desc">
+          Production-grade Abstract Syntax Tree generator in Go — parsing a custom language with full error reporting and extensible visitor architecture.
+        </p>
+        <ul class="project-bullets">
+          <li>Tokenization, syntax validation, and Pratt parser for operator precedence — compiler-style error reporting with line and column tracking</li>
+          <li>Extensible AST + Visitor Pattern framework designed for semantic analysis and LLVM IR code generation phases</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag tag-cyan">Go</span><span class="tag tag-cyan">Compiler Design</span>
+          <span class="tag tag-cyan">AST</span><span class="tag tag-cyan">Pratt Parser</span>
+          <span class="tag tag-cyan">LLVM IR</span><span class="tag tag-cyan">Visitor Pattern</span>
+        </div>
+      </div>
+
+      <!-- GC -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">Mark &amp; Sweep Garbage Collector</div>
+          <div class="project-year">Jan 2025</div>
+        </div>
+        <p class="project-desc">
+          Low-level memory management implementation simulating production runtime techniques, with full visualization of GC cycles.
+        </p>
+        <ul class="project-bullets">
+          <li>Object tracking, root set management, and graph-based reachability analysis with circular reference handling</li>
+          <li>Visualization and statistical monitoring modules for GC cycle performance, pause times, and object lifecycle patterns</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag tag-cyan">Python</span><span class="tag tag-cyan">Graph Algorithms</span>
+          <span class="tag tag-cyan">Memory Management</span><span class="tag tag-cyan">Graphviz</span>
+        </div>
+      </div>
+
+      <!-- OCEP -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">OCEP · Object Communication Error Predictor</div>
+          <div class="project-year">Jan 2026</div>
+        </div>
+        <p class="project-desc">
+          Interactive dashboard for software quality analysis — predicting object communication errors using ML classifiers on benchmark datasets.
+        </p>
+        <ul class="project-bullets">
+          <li>Ensemble ML prediction pipelines with feature importance visualization and software reliability analysis</li>
+          <li>Streamlit dashboard for dataset upload, metric visualization, and prediction output</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span><span class="tag">Scikit-learn</span>
+          <span class="tag">Streamlit</span><span class="tag">Data Visualization</span>
+        </div>
+      </div>
+
+      <!-- Malware -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">Malware Detection System</div>
+          <div class="project-year">Jan 2026</div>
+        </div>
+        <p class="project-desc">
+          End-to-end ML pipeline classifying malicious vs. benign executables through behavioral and feature-based analysis.
+        </p>
+        <ul class="project-bullets">
+          <li>Feature engineering, preprocessing, and classification pipeline achieving <span class="metric-highlight">94%+</span> accuracy on benchmark datasets</li>
+          <li>Sub-100ms inference latency for real-time detection of suspicious file patterns</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span><span class="tag">Scikit-learn</span>
+          <span class="tag">Cybersecurity</span><span class="tag">Data Analysis</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills">
+    <div class="section-label">Technical toolkit</div>
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <div class="skill-domain">AI / ML & Predictive Analytics</div>
+        <div class="skill-list">Python, Scikit-learn, TensorFlow, LSTM, Pastas, HuggingFace, NumPy, Pandas</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-domain">Computer Vision & Generative Models</div>
+        <div class="skill-list">Diffusion Models, ControlNet, 3D Pose Estimation, OpenCV, AR/VR Rendering, ONNX</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-domain">Systems & Compiler Design</div>
+        <div class="skill-list">Go, AST, Pratt Parser, LLVM IR, Raft Consensus, gRPC, Memory Management</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-domain">Data Science & Visualization</div>
+        <div class="skill-list">Matplotlib, Streamlit, Statistical Modeling, Data Analysis, Graphviz</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-domain">Full Stack & Cloud</div>
+        <div class="skill-list">Flutter, Firebase, React, REST APIs, Google Maps API, Android Studio</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-domain">Programming Languages</div>
+        <div class="skill-list">Python, Go, C, C++, Java, JavaScript</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-domain">DevOps & Tools</div>
+        <div class="skill-list">Git, Docker, Linux/Unix, MySQL, JSON, ESP32/IoT</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-domain">Data Structures & Algorithms</div>
+        <div class="skill-list">Graph Algorithms, OOP, Recursion, Concurrency, Distributed Systems</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section id="education">
+    <div class="section-label">Academic background</div>
+    <h2 class="section-title">Education</h2>
+
+    <div class="edu-card" style="margin-bottom: 2px;">
+      <div class="edu-school">Vishwakarma Institute of Technology, Pune</div>
+      <div class="edu-degree">B.Tech – Artificial Intelligence &nbsp;·&nbsp; Aug 2024 – Present</div>
+      <div class="edu-detail">
+        <span class="edu-chip">GPA 9.55</span>
+      </div>
+      <div class="edu-coursework" style="margin-top: 12px;">
+        <strong>Coursework:</strong> Machine Learning · Data Structures & Algorithms · Linear Algebra · Probability & Statistics · Operating Systems · Computer Networks · DBMS
+      </div>
+    </div>
+
+    <div class="edu-secondary">
+      <div class="edu-sec-row">
+        <span class="edu-sec-name">KRT Arts, BH Commerce & AM Science College, Nashik &nbsp;—&nbsp; 12th HSC</span>
+        <span class="edu-sec-score">87.67%</span>
+      </div>
+      <div class="edu-sec-row">
+        <span class="edu-sec-name">Seth Lalji Narayanji Sarvajanik Vidyalaya, Jalgaon &nbsp;—&nbsp; 10th SSC</span>
+        <span class="edu-sec-score">93.80%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACHIEVEMENTS ── -->
+  <section>
+    <div class="section-label">Beyond the code</div>
+    <h2 class="section-title">Theatre & Achievements</h2>
+    <div class="achieve-list">
+      <div class="achieve-row">
+        <div class="achieve-icon">🏆</div>
+        <div class="achieve-body">
+          <div class="achieve-title">Firodiya Karandak 2025 — 1st Prize, 3D Miniature</div>
+        </div>
+      </div>
+      <div class="achieve-row">
+        <div class="achieve-icon">🎭</div>
+        <div class="achieve-body">
+          <div class="achieve-title">Sarpotdar Karandak 2025 — Best Actor, 3rd Prize</div>
+        </div>
+      </div>
+      <div class="achieve-row">
+        <div class="achieve-icon">🎨</div>
+        <div class="achieve-body">
+          <div class="achieve-title">Vinodottam Karandak 2025 — Best Poster Making, 1st Prize</div>
+        </div>
+      </div>
+      <div class="achieve-row">
+        <div class="achieve-icon">🥇</div>
+        <div class="achieve-body">
+          <div class="achieve-title">Crescendo Natyasamrat — 1st Prize</div>
+        </div>
+      </div>
+      <div class="achieve-row">
+        <div class="achieve-icon">🎬</div>
+        <div class="achieve-body">
+          <div class="achieve-title">Active in 7+ theatre productions</div>
+          <div class="achieve-sub">Actor, Technical Coordinator, Sound Engineer, and Backstage Crew — demonstrating communication, teamwork, and leadership under pressure.</div>
+        </div>
+      </div>
+      <div class="achieve-row">
+        <div class="achieve-icon">🚀</div>
+        <div class="achieve-body">
+          <div class="achieve-title">Smart India Hackathon 2025 — Local Finalist</div>
+          <div class="achieve-sub">BHUJAL-NETRA platform for national-scale groundwater monitoring.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="section-label">Get in touch</div>
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-cell">
+        <div class="contact-label">Email</div>
+        <a href="mailto:mangesh.pvt24@gmail.com">mangesh.pvt24@gmail.com</a>
+      </div>
+      <div class="contact-cell">
+        <div class="contact-label">Phone</div>
+        <a href="tel:+917588086319">+91 75880 86319</a>
+      </div>
+      <div class="contact-cell">
+        <div class="contact-label">LinkedIn</div>
+        <a href="https://linkedin.com/in/mangesh-savant" target="_blank" rel="noopener">linkedin.com/in/mangesh-savant</a>
+      </div>
+      <div class="contact-cell">
+        <div class="contact-label">GitHub</div>
+        <a href="https://github.com/" target="_blank" rel="noopener">github.com/mangesh-savant</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="content">
+    Built by Mangesh Savant · <span style="font-family:var(--mono)">mangesh.pvt24@gmail.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
